@@ -77,7 +77,7 @@ PM_START_TEX = """
 
 PM_START_TEXT = """ 
 
-👀𝐇𝐞𝐲 {} , [🖤](https://graph.org/file/d874fc40ddf9ead0cad6b.jpg)
+👀𝐇𝐞𝐲 {} , [🖤]({START_IMG})
 
 ╔══❰🌺𝐖𝐄𝐋𝐂𝐎𝐌𝐄🌺❱═══❍⊱❁۪۪
 ║
