@@ -508,7 +508,7 @@ def sudolist(update: Update, context: CallbackContext):
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
-    true_sudo = list(set(DRAGONS) 
+    true_sudo = list(set(DRAGONS))
     reply = "<b> ᴋɴᴏᴡɴ ᴅʀᴀɢᴏɴ ᴅɪsᴀsᴛᴇʀs🐉:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
