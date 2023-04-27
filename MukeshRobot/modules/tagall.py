@@ -52,7 +52,7 @@ async def mentionall(event):
             )
     else:
         return await event.respond(
-            "/tagll 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠... 𝐁𝐮𝐭 𝐍𝐞𝐱𝐭 𝐓𝐢𝐦𝐞 𝐑𝐞𝐩𝐥𝐲 𝐀𝐧𝐲 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐎𝐤."
+            "/tagall 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠... 𝐁𝐮𝐭 𝐍𝐞𝐱𝐭 𝐓𝐢𝐦𝐞 𝐑𝐞𝐩𝐥𝐲 𝐀𝐧𝐲 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐎𝐤."
         )
 
     spam_chats.append(chat_id)
