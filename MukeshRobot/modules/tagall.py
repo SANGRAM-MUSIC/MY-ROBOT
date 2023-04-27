@@ -4,12 +4,14 @@ from telethon import events
 from telethon.errors import UserNotParticipantError
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
-
+import random
 from MukeshRobot import telethn as client
 
 spam_chats = []
 
-
+EMOJIS = [ "😘",
+           "😭",
+           "🤣", ]
 @client.on(events.NewMessage(pattern="^/tagall ?(.*)"))
 @client.on(events.NewMessage(pattern="^@all ?(.*)"))
 async def mentionall(event):
@@ -56,14 +58,14 @@ async def mentionall(event):
         if not chat_id in spam_chats:
             break
         usrnum += 1
-        usrtxt += f"[🧚](tg://user?id={usr.id}), "
-        if usrnum == 10:
+        usrtxt += f"[{random.choice(EMOJIS)}](tg://user?id={usr.id}), "
+        if usrnum == 50:
             if mode == "text_on_cmd":
                 txt = f"{msg}\n{usrtxt}"
                 await client.send_message(chat_id, txt)
             elif mode == "text_on_reply":
                 await msg.reply(usrtxt)
-            await asyncio.sleep(3)
+            await asyncio.sleep(1)
             usrnum = 0
             usrtxt = ""
     try:
