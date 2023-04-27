@@ -100,7 +100,7 @@ async def cancel_spam(event):
             spam_chats.remove(event.chat_id)
         except:
             pass
-        return await event.respond("♦𝐒𝐭𝐨𝐩𝐩𝐞𝐝 𝐌𝐞𝐧𝐭𝐢𝐨𝐧 𝐁𝐚𝐛𝐲♦)
+        return await event.respond("♦𝐒𝐭𝐨𝐩𝐩𝐞𝐝 𝐌𝐞𝐧𝐭𝐢𝐨𝐧 𝐁𝐚𝐛𝐲♦")
 
 
 __mod_name__ = "⚡Tᴀɢ⚡"
