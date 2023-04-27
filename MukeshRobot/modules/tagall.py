@@ -9,7 +9,7 @@ from MukeshRobot import telethn as client
 
 spam_chats = []
 
-WORDSS = [ "
+WORDSS = [ "𝐇𝐞𝐲 𝐁𝐚𝐛𝐲 𝐊𝐚𝐡𝐚 𝐇𝐨🥱" ]
 EMOJIS = [ "😘",
            "😭",
            "🤣", ]
@@ -62,8 +62,8 @@ async def mentionall(event):
         if not chat_id in spam_chats:
             break
         usrnum += 1
-        usrtxt += f"[{random.choice(EMOJIS)}](tg://user?id={usr.id}), "
-        if usrnum == 50:
+        usrtxt += f"[{user.first_name}](tg://user?id={usr.id}), "
+        if usrnum == 1:
             if mode == "text_on_cmd":
                 txt = f"{usrtxt} {random.choice(WORDSS)}"
                 await client.send_message(chat_id, txt)
@@ -100,8 +100,7 @@ async def cancel_spam(event):
             spam_chats.remove(event.chat_id)
         except:
             pass
-        return await event.respond("__Stopped Mention.__
-p")
+        return await event.respond("♦𝐒𝐭𝐨𝐩𝐩𝐞𝐝 𝐌𝐞𝐧𝐭𝐢𝐨𝐧 𝐁𝐚𝐛𝐲♦)
 
 
 __mod_name__ = "⚡Tᴀɢ⚡"
