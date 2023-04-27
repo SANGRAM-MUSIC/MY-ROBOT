@@ -9,11 +9,15 @@ from MukeshRobot import telethn as client
 
 spam_chats = []
 
+WORDSS = [ "
 EMOJIS = [ "😘",
            "😭",
            "🤣", ]
 @client.on(events.NewMessage(pattern="^/tagall ?(.*)"))
 @client.on(events.NewMessage(pattern="^@all ?(.*)"))
+@client.on(events.NewMessage(pattern="^#all ?(.*)"))
+@client.on(events.NewMessage(pattern="^#tagall ?(.*)"))
+@client.on(events.NewMessage(pattern="^.tagall ?(.*)"))
 async def mentionall(event):
     chat_id = event.chat_id
     if event.is_private:
@@ -35,7 +39,7 @@ async def mentionall(event):
         return await event.respond("__Only admins can mention all!__")
 
     if event.pattern_match.group(1) and event.is_reply:
-        return await event.respond("__Give me one argument!__")
+        return await event.respond("/tagall hello 👈 𝐓𝐲𝐩𝐞 𝐋𝐢𝐤𝐞 𝐓𝐡𝐢𝐬 𝐍𝐞𝐱𝐭 𝐓𝐢𝐦𝐞 𝐎𝐤 𝐅𝐨𝐫 𝐓𝐚𝐠𝐠𝐢𝐧𝐠..")
     elif event.pattern_match.group(1):
         mode = "text_on_cmd"
         msg = event.pattern_match.group(1)
@@ -44,11 +48,11 @@ async def mentionall(event):
         msg = await event.get_reply_message()
         if msg == None:
             return await event.respond(
-                "__I can't mention members for older messages! (messages which are sent before I'm added to group)__"
+                "/tagall 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠..."
             )
     else:
         return await event.respond(
-            "__Reply to a message or give me some text to mention others!__"
+            "/tagll 𝐒𝐭𝐚𝐫𝐭𝐢𝐧𝐠... 𝐁𝐮𝐭 𝐍𝐞𝐱𝐭 𝐓𝐢𝐦𝐞 𝐑𝐞𝐩𝐥𝐲 𝐀𝐧𝐲 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐎𝐤."
         )
 
     spam_chats.append(chat_id)
@@ -61,7 +65,7 @@ async def mentionall(event):
         usrtxt += f"[{random.choice(EMOJIS)}](tg://user?id={usr.id}), "
         if usrnum == 50:
             if mode == "text_on_cmd":
-                txt = f"{msg}\n{usrtxt}"
+                txt = f"{usrtxt} {random.choice(WORDSS)}"
                 await client.send_message(chat_id, txt)
             elif mode == "text_on_reply":
                 await msg.reply(usrtxt)
@@ -96,7 +100,8 @@ async def cancel_spam(event):
             spam_chats.remove(event.chat_id)
         except:
             pass
-        return await event.respond("__Stopped Mention.__")
+        return await event.respond("__Stopped Mention.__
+p")
 
 
 __mod_name__ = "⚡Tᴀɢ⚡"
