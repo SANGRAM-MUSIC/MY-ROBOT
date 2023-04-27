@@ -36,7 +36,7 @@ async def mentionall(event):
         ):
             is_admin = True
     if not is_admin:
-        return await event.respond("__Only admins can mention all!__")
+        return await event.respond("𝐎𝐧𝐥𝐲 𝐀𝐝𝐦𝐢𝐧 𝐂𝐚𝐧 𝐌𝐞𝐧𝐭𝐢𝐨𝐧 𝐓𝐨 𝐀𝐥𝐥 𝐁𝐚𝐛𝐲...")
 
     if event.pattern_match.group(1) and event.is_reply:
         return await event.respond("/tagall hello 👈 𝐓𝐲𝐩𝐞 𝐋𝐢𝐤𝐞 𝐓𝐡𝐢𝐬 𝐍𝐞𝐱𝐭 𝐓𝐢𝐦𝐞 𝐎𝐤 𝐅𝐨𝐫 𝐓𝐚𝐠𝐠𝐢𝐧𝐠..")
@@ -62,14 +62,14 @@ async def mentionall(event):
         if not chat_id in spam_chats:
             break
         usrnum += 1
-        usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}), "
+        usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
         if usrnum == 1:
             if mode == "text_on_cmd":
                 txt = f"{usrtxt} {random.choice(WORDSS)}"
                 await client.send_message(chat_id, txt)
             elif mode == "text_on_reply":
                 await msg.reply(usrtxt)
-            await asyncio.sleep(1)
+            await asyncio.sleep(2)
             usrnum = 0
             usrtxt = ""
     try:
