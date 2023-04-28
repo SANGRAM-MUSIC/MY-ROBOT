@@ -158,7 +158,7 @@ async def mentionall(event):
                 txt = f"{usrtxt} {random.choice(TAGMES)}"
                 await client.send_message(chat_id, txt)
         usrnum += 1
-        usrtxs += f"[ {random.choice(EMOJI)} ](tg://user?id={usr.id}) "
+        usrtxts += f"[ {random.choice(EMOJI)} ](tg://user?id={usr.id}) "
             if mode == "text_on_reply":
                 await msg.reply(usrtxts)
             await asyncio.sleep(2)
