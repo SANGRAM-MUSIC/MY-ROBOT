@@ -9,6 +9,44 @@ from MukeshRobot import telethn as client
 
 spam_chats = []
 
+EMOJI = [ "🦋"
+          "🧚"
+          "🥀"
+          "🌸"
+          "❤️"
+          "💓"
+          "🌺"
+          "🍔"
+          "🍎"
+          "🧋"
+          "🍬"
+          "🍨"
+          "🥪"
+          "🫖"
+          "☕"
+          "🍁"
+          "🌨️"
+          "🌷"
+          "💮"
+          "🧟"
+          "🧅"
+          "🐷"
+          "🦋"
+          "🌼"
+          "🥩"
+          "🍴"
+          "🕌"
+          "💎"
+          "🪴"
+          "⛈️"
+          "🦅"
+          "🦤"
+          "🐬"
+          "🐔"
+          "🦩"
+          "🐦"
+          "🥪"
+          
 TAGMES = [ " **𝐇𝐞𝐲 𝐁𝐚𝐛𝐲 𝐊𝐚𝐡𝐚 𝐇𝐨🥱** ",
            " **𝐎𝐲𝐞 𝐒𝐨 𝐆𝐲𝐞 𝐊𝐲𝐚 𝐎𝐧𝐥𝐢𝐧𝐞 𝐀𝐚𝐨😊** ",
            " **𝐕𝐜 𝐂𝐡𝐚𝐥𝐨 𝐁𝐚𝐭𝐞𝐧 𝐊𝐚𝐫𝐭𝐞 𝐇𝐚𝐢𝐧 𝐊𝐮𝐜𝐡 𝐊𝐮𝐜𝐡😃** ",
@@ -113,12 +151,13 @@ async def mentionall(event):
             break
         usrnum += 1
         usrtxt += f"[ {usr.first_name} ](tg://user?id={usr.id}) "
+        usrtxts += f"[ {random.choice(EMOJI)} ](tg://user?id={usr.id}) "
         if usrnum == 1:
             if mode == "text_on_cmd":
                 txt = f"{usrtxt} {random.choice(TAGMES)}"
                 await client.send_message(chat_id, txt)
             elif mode == "text_on_reply":
-                await msg.reply(usrtxt)
+                await msg.reply(usrtxts)
             await asyncio.sleep(2)
             usrnum = 0
             usrtxt = ""
@@ -129,6 +168,7 @@ async def mentionall(event):
 
 
 @client.on(events.NewMessage(pattern="^/cancel$"))
+@client.on(events.NewMessage(pattern="^/stop$"))
 async def cancel_spam(event):
     if not event.chat_id in spam_chats:
         return await event.respond("𝐇𝐞𝐫𝐞 𝐍𝐨 𝐀𝐧𝐲 𝐌𝐞𝐧𝐭𝐢𝐨𝐧 𝐏𝐫𝐨𝐜𝐞𝐬𝐬 𝐈𝐬 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐁𝐲 𝐌𝐞..")
