@@ -268,7 +268,7 @@ def new_member(update: Update, context: CallbackContext):
                     return
                 bot.send_message(
                     EVENT_LOGS,
-                    "#NEW_GROUP\n<b>Group name:</b> {}\nUsername:</b> {}\n<b>ID:</b> <code>{}</code>".format(
+                    "#NEW_GROUP\n<b>Group name:</b> {}\n</b>Username:</b> {}\n<b>ID:</b> <code>{}</code>".format(
                         html.escape(chat.title), (chat.username), 
                         chat.id,
                     ),
