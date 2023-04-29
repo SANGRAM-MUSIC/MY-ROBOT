@@ -269,7 +269,7 @@ def new_member(update: Update, context: CallbackContext):
                 bot.send_message(
                     EVENT_LOGS,
                     "#NEW_GROUP\n<b>Group name:</b> {}\n</b>Username:</b> {}\n<b>ID:</b> <code>{}</code>".format(
-                        html.escape(chat.title), (chat.username), 
+                        html.escape(chat.title), (chat.id), 
                         chat.id,
                     ),
                     parse_mode=ParseMode.HTML,
