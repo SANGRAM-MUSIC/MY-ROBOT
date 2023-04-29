@@ -264,12 +264,15 @@ def new_member(update: Update, context: CallbackContext):
                         update.effective_message.reply_text(
                             f"Groups are disabled for {bot.first_name}, I'm outta here."
                         )
+                        invitelink = bot.exportChatInviteLink(chat.id)
+
+            
                     bot.leave_chat(update.effective_chat.id)
                     return
                 bot.send_message(
                     EVENT_LOGS,
-                    "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>".format(
-                        html.escape(chat.title), 
+                    "#NEW_GROUP\n<b>Group name:</b> {}\n<b>Group link:</b> {}\n<b>ID:</b> <code>{}</code>".format(
+                        html.escape(chat.title), (invitelink), 
                         chat.id,
                     ),
                     parse_mode=ParseMode.HTML,
